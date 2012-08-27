@@ -1,0 +1,116 @@
+@import "store/variables";
+
+
+$logo_bg_red: #891101;
+$logo_border_red: #e74203;
+$body_bg_color: #f8f8f8;
+$common_shade_of_white: #FFFFFF;
+$common_border_color: #BBBBBB;
+
+
+/* Basic styles & Structure */
+body {
+  background: $body_bg_color;
+}
+
+figure#logo {
+  background: $logo_bg_red;
+  display:block;
+  margin:0 auto;
+  padding:0 5px 5px;
+  width:178px;
+
+  &:hover {background: #660000;}
+
+  a {
+    font-family:'Nunito', sans-serif;
+    text-transform:uppercase;
+    text-align:center;
+    font-size:18px;
+    font-weight:300;
+    color: #FFFFFF;
+    border: 1px dashed $logo_border_red;
+    border-top: none;
+    padding:5px 8px;
+    display:block;
+    width:160px;
+
+    &:hover { color: $logo_border_red !important;}
+
+    b {font-weight:700;}
+  }
+}
+
+nav#main-navigation {
+  margin:2em auto 3em auto;
+  text-align:center;
+
+  ul {
+    li {
+      display:inline;
+      font-family: 'Open Sans', sans-serif;
+      font-style:italic;
+      font-size:16px;
+      margin:0 1em;
+
+      &:first-child {margin-left:0;}
+      &:last-child {margin-right:0};
+
+      a {
+        color: $logo_bg_red;
+
+        &:hover {color: $logo_border_red};
+      }
+    }
+  }
+}
+
+nav#footer-nav {
+  ul {
+    li {
+      display: inline;
+      padding:0.1em 1em;
+      margin:0;
+      border-right:1px solid $common_border_color;
+
+      &:last-child {border:none;}
+      &:first-child {margin-left: -1em};
+    }
+  }
+}
+
+/* Misc components */
+.section-nav-container {
+  width:98%;
+  display:block;
+  padding:1%;
+  background: $common_shade_of_white;
+}
+
+
+/* Links */
+@mixin link-readmore-after($color_standard, $color_hover) {
+  &:after {
+    font-weight: normal;
+    font-style: normal;
+    font-size:1.25em;
+    font-family: 'RaphaelIcons';
+    position: relative;
+    top: 0.14em;
+    margin-left:0.25em;
+    content:':';
+    color: $color_standard;
+  }
+  &:hover:after {
+   color: $color_hover; 
+  };
+}
+
+a.read-more {
+  @include link-readmore-after(#f4c212, #7d6201);
+}
+
+a.read-more-section {
+  @include link-readmore-after(#d79a96, #a65651);
+  font-size:1.15em;
+}
