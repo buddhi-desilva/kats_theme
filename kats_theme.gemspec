@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'kats_theme'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.summary     = 'A spree commerce and refinery theme'
   s.homepage    = 'http://webjuice.co'
 

@@ -2,8 +2,9 @@
   <nav id="footer-nav">
     <ul>
       <li><b>&copy; <%= Time.now.year %> Kat's Lounge</b></li>
-      <li><%= link_to 'Legal Notice', refinery.url_for(Refinery::Page.find('legal-notice')) %></li>
-      <li><%= link_to 'Legal Notice', refinery.url_for(Refinery::Page.find('privacy-policy')) %></li>
+      <li><%= link_to 'Legal notice', refinery.url_for(Refinery::Page.find('legal-notice')) %></li>
+      <li><%= link_to 'Privacy policy', refinery.url_for(Refinery::Page.find('privacy-policy')) %></li>
+      <li><%= render "/refinery/blog/shared/rss_feed" %></li>
     </ul>
   </nav>
 </footer>

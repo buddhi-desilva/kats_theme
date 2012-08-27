@@ -1,0 +1,22 @@
+<% flash.each do |key, value| %>
+ <div id='flash' class="flash flash_<%= key %>">
+   <%= value %>
+ </div>
+<% end %>
+
+<header>
+  <h1><%= @post.title %></h1>
+  <section class='details'>
+    <time datetime="<%=l @post.published_at.to_date, :format => :default %>" class='posted_at'>
+      <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(@post.published_at.to_date, :format => :short)) %>
+    </time>
+  </section>
+</header>
+<article id="blog_post">
+  <%= @post.body.html_safe %>
+
+  <% if Refinery::Blog::Post::ShareThis.enabled? %>
+    <span class="st_sharethis" displayText="ShareThis"></span>
+  <% end %>
+</article>
+<%= render :partial => '/refinery/draft_page_message' unless @post.nil? or @post.live? -%>
