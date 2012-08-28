@@ -10,7 +10,7 @@ $subtle_border_color: #EEEEEE;
 
 $title_color_low_profile: #CCCCCC;
 
-/* Mixins */
+/* Common Mixins */
 @mixin border-radius-side($side, $radius) {
   border-#{$side}-radius: $radius;
   -moz-border-radius-#{$side}: $radius;
@@ -21,6 +21,12 @@ $title_color_low_profile: #CCCCCC;
   border-radius: $radius;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($color_r: 0, $color_g: 0, $color_b: 0, $alfa: 1, $x:0px, $y:0px, $area:3px) {
+  -webkit-box-shadow: rgba($color_r,$color_g,$color_b,$alfa) $x $y $area;
+  -moz-box-shadow: rgba($color_r,$color_g,$color_b,$alfa) $x $y $area;
+  box-shadow: rgba($color_r,$color_g,$color_b,$alfa) $x $y $area;
 }
 
 
@@ -77,6 +83,7 @@ figure#logo {
   margin:0 auto;
   padding:0 5px 5px;
   width:178px;
+  @include box-shadow;
 
   &:hover {background: #660000;}
 
@@ -204,21 +211,41 @@ div#blog_post_index {
       float:left;
       background:none;
 
-      header {
-        h1 {
-          font-weight:400;
-          font-size:1.8em;
-          font-style:italic;
-          letter-spacing:-0.05em;
-          a {color:#000000;}
-        }
-      }
-      section {
-        color: #888888;
-        font-size:1.08em;
+      article.blog_post {
+        margin-bottom:3em;
       }
 
-      footer {margin-bottom:2em;}
+      img.blog_post_image, img.blog_post_image_no_border {
+        float:left;
+        margin:0.9em 1em 0 0;
+        border:1px solid $common_border_color;
+      }
+
+      img.blog_post_image_no_border {
+        border-color:$body_bg_color;
+      }
+
+      div.blog_post_text {
+        header {
+          h1 {
+            padding:0;
+            font-weight:400;
+            font-size:1.8em;
+            font-style:italic;
+            letter-spacing:-0.05em;
+            a {color:#000000;}
+          }
+        }
+        section {
+          color: #888888;
+          font-size:1.08em;
+
+          footer {
+            margin:0.5em 0 0 0;
+          }
+        }
+      }
+
     }
 
     section#side_body {

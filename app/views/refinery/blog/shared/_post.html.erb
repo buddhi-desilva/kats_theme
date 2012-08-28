@@ -1,17 +1,28 @@
 <% if post.live? %>
   <article class="blog_post" id="<%= dom_id(post) %>">
-    <header>
-      <h1><%= link_to post.title, refinery.blog_post_path(post) %></h1>
-    </header>
-    <section class='clearfix'>
-      <% if blog_post_teaser_enabled? %>
-        <%= blog_post_teaser(post) %>
-      <% else %>
-        <%= post.body.html_safe %>
-      <% end %>
-    </section>
-    <footer>
-        <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post), :class => 'read-more' if blog_post_teaser_enabled? %>
-    </footer>
+    <% if (post_image = post.images.first) %>
+      <%= image_tag post_image.thumbnail("150x150#c").url, :class => 'blog_post_image' %>
+    <% else %>
+      <%= image_tag 'blog_index_image_placeholder.png', :class => 'blog_post_image_no_border' %>
+    <% end %>
+
+    <div class="blog_post_text">
+      <header>
+        <h1><%= link_to post.title, refinery.blog_post_path(post) %></h1>
+      </header>
+      <section class='clearfix'>
+        <%  if blog_post_teaser_enabled?
+              post_content = blog_post_teaser(post)
+            else
+              post_content = post.body.html_safe
+            end
+        %>
+        <%= sanitize post_content, :tags => %(b em a) %>
+        <footer>
+          <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post), :class => 'read-more' if blog_post_teaser_enabled? %>
+        </footer>
+      </section>
+    </div>
+
   </article>
 <% end %>
