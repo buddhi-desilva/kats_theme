@@ -1,7 +1,51 @@
-<div class="home-banner">
+<header class="home-banner">
   <%= image_tag('temp-banner.png') %>
-</div>
+</header>
 
-<div class="section-nav-container" >
+<article id="home-content">
+  <ul id="homepage-products">
+    <%
+    latest_articles = Refinery::Blog::Post.find(:all, :limit => 3, :order => 'published_at desc')
+
+    @first_post = true
+
+    latest_articles.each do |post| %>
+      <li <%= 'class=first-post' if  @first_post %> >
+
+        <% @img_size = @first_post ? {:spree => 'large_url', :refinery => '600x600#c' } : {:spree => 'medium_url', :refinery => '150x150#c' } %>
+
+        <% if post.live? %>
+          <header>
+            <h1><%= link_to post.title, refinery.blog_post_path(post) %></h1>
+          </header>
+
+          <article class="blog_post" id="<%= dom_id(post) %>">
+            <% if post.respond_to?('product') && post.product && post.product.images %>
+              <%= link_to (image_tag post.product.images.first.send(@img_size[:spree].to_sym), :class => 'blog_post_image'), refinery.blog_post_path(post) %>
+            <% elsif (post_image = post.images.first) %>
+              <%= link_to (image_tag post_image.thumbnail(@img_size[:refinery]).url, :class => 'blog_post_image'), refinery.blog_post_path(post) %>
+            <% end %>
+
+            <section class='clearfix'>
+                <section class="blog-content">
+                  <%= truncate_html sanitize(blog_post_teaser(post), :tags => %(b em a)), :length => 200 %>
+                </section>              
+              <footer>
+                <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post), :class => 'read-more' if blog_post_teaser_enabled? %>
+              </footer>
+            </section>
+
+          </article>
+        <% end %>
+
+
+      <% @first_post = false # turn off the first post flag %>
+      </li>
+    <% end %>
+  </ul>
+</article>
+
+
+<footer class="section-nav-container" >
   <%= link_to 'Read more stories <b><em>of Beautiful things</em></b>'.html_safe, refinery.blog_root_path, :class => 'read-more-section' %>
-</div>
+</footer>

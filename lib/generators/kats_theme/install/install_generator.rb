@@ -16,7 +16,6 @@ module KatsTheme
         end
 
         inject_into_file destination_stylesheet, "\n *= require store/index\n", :before => /\*\//, :verbose => true
-
       end
       
     end

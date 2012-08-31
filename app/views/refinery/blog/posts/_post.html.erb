@@ -13,6 +13,18 @@
   </section>
 </header>
 <article id="blog_post">
+    <% if @post.respond_to?('product') && @post.product && @post.product.images %>
+      <section class="blog-post-product-content">
+        <%= link_to (image_tag @post.product.images.first.medium_url, :class => 'blog_post_image'), spree.product_path(@post.product) %>
+        <p>
+          <%= truncate_html @post.product.description, :length => 400 %>
+        </p>
+        <p>
+          <%= link_to 'View product details', spree.product_path(@post.product), :class => 'view-product' %>
+        </p>
+      </section>
+    <% end %>
+
   <%= @post.body.html_safe %>
 
   <% if Refinery::Blog::Post::ShareThis.enabled? %>
