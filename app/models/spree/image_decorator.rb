@@ -3,7 +3,7 @@ Spree::Image.class_eval do
     :mini => '48x48>', # thumbs under image
     :small => '100x100>', # images on category view
     :medium => '150x150>', #medium sized for refinery-blog
-    :product => '240x240>', # full product image
+    :product => '360x360>', # full product image
     :large => '600x600>'  # light box image
   }
 

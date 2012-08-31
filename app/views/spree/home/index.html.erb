@@ -12,7 +12,7 @@
     latest_articles.each do |post| %>
       <li <%= 'class=first-post' if  @first_post %> >
 
-        <% @img_size = @first_post ? {:spree => 'large_url', :refinery => '600x600#c' } : {:spree => 'medium_url', :refinery => '150x150#c' } %>
+        <% @img_size = @first_post ? {:spree => 'product_url', :refinery => '360x360#c' } : {:spree => 'medium_url', :refinery => '150x150#c' } %>
 
         <% if post.live? %>
           <header>
