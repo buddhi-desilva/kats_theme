@@ -1,10 +1,20 @@
 @font-face {font-family:
     'RaphaelIcons';
     src:url('icon-fonts/raphaelicons-webfont.eot');
-    src:local('RaphaelIcons'),
+    src:local('☺'),
+        local('RaphaelIcons'),
         url('icon-fonts/raphaelicons-webfont.woff') format('woff'),
         url('icon-fonts/raphaelicons-webfont.ttf') format('truetype'),
         url('icon-fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
+}
+
+@media screen and (max-device-width: 480px) {
+    @font-face {
+        font-family:'RaphaelIcons';
+        src:url('icon-fonts/raphaelicons-webfont.woff') format('woff'),
+            url('icon-fonts/raphaelicons-webfont.ttf') format('truetype'),
+            url('icon-fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
+    }
 }
 
 .icon {
