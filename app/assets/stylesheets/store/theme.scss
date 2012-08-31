@@ -118,6 +118,7 @@ nav#main-navigation {
       font-style:italic;
       font-size:16px;
       margin:0 1em;
+      white-space:nowrap;
 
       &:first-child {margin-left:0;}
       &:last-child {margin-right:0};
@@ -134,6 +135,7 @@ nav#main-navigation {
 nav#footer-nav {
   ul {
     li {
+      white-space:nowrap;
       display: inline;
       padding:0.1em 1em;
       margin:0;
