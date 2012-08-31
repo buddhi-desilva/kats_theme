@@ -1,11 +1,10 @@
 @font-face {font-family:
     'RaphaelIcons';
-    src:
-    url('icon-fonts/raphaelicons-webfont.eot');
-    src:
-    local('☺'), url('icon-fonts/raphaelicons-webfont.woff') format('woff'), url('icon-fonts/raphaelicons-webfont.ttf') format('truetype'), url('icon-fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    src:url('icon-fonts/raphaelicons-webfont.eot');
+    src:local('RaphaelIcons'),
+        url('icon-fonts/raphaelicons-webfont.woff') format('woff'),
+        url('icon-fonts/raphaelicons-webfont.ttf') format('truetype'),
+        url('icon-fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
 }
 
 .icon {
