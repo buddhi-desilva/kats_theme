@@ -5,7 +5,7 @@
 <article id="home-content">
   <ul id="homepage-products">
     <%
-    latest_articles = Refinery::Blog::Post.find(:all, :limit => 3, :order => 'published_at desc')
+    latest_articles = Refinery::Blog::Post.on_homepage
 
     @first_post = true
 
@@ -31,7 +31,7 @@
                   <%= truncate_html sanitize(blog_post_teaser(post), :tags => %(b em a)), :length => 200 %>
                 </section>              
               <footer>
-                <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post), :class => 'read-more' if blog_post_teaser_enabled? %>
+                <%= link_to t('refinery.blog.shared.posts.read_more'), refinery.blog_post_path(post), :class => 'read-more' if blog_post_teaser_enabled? %>
               </footer>
             </section>
 

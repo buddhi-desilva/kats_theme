@@ -1,0 +1,43 @@
+<%= render :partial => '/refinery/blog/admin/submenu' %>
+<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/admin/admin_common') %>
+  <script>
+    $('#homepage_posts').ready(function(){
+      $('#homepage_posts').disableSelection();
+      $('#homepage_posts').sortable(
+        {
+          update: function(event, ui) {
+          positions = {};
+          $.each($('#homepage_posts li'), function(position, obj){
+              positions['positions['+ position +']'] = $(obj).attr('id');
+          });
+          $.ajax({
+            type: 'POST',
+            dataType: 'script',
+            url: '<%= refinery.home_posts_update_positions_blog_admin_posts_path %>',
+            data: positions,
+            success: function(data){}
+          });
+        }
+      });
+    });
+  </script>
+
+<% if @posts %>
+  <ul id='homepage_posts' class="ui-sortable reordering">
+    <% @posts.each do |post| %>
+      <li id="<%= post.id %>" >
+        <%= post.title %>
+        <%= link_to 'x', refinery.home_posts_remove_blog_admin_posts_path(:id => post.id), html_options = {:remote => true, :method => :post, :class => 'remove_post'} %>
+
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <ul id='homepage_posts'>
+    <li>
+      <div class="errorExplanation" id="errorExplanation">
+        <%= t('refinery.blog.admin.posts.no_homepage_products_defined') %>
+      </div>
+    </li>
+  </ul>
+<% end %>

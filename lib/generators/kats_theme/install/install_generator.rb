@@ -17,6 +17,19 @@ module KatsTheme
 
         inject_into_file destination_stylesheet, "\n *= require store/index\n", :before => /\*\//, :verbose => true
       end
+
+      def add_migrations
+        run 'bundle exec rake kats_theme:install:migrations'
+      end
+
+      def run_migrations
+         res = ask "Would you like to run the migrations now? [Y/n]"
+         if res == "" || res.downcase == "y"
+           run 'bundle exec rake db:migrate'
+         else
+           puts "Skipping rake db:migrate, don't forget to run it!"
+         end
+      end
       
     end
   end

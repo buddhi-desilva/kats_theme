@@ -1,0 +1,56 @@
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+ul#homepage_posts {
+ margin:0;
+ padding:0;
+ overflow:hidden;
+
+ li {
+  list-style:none;
+  display:block;
+  overflow:hidden;
+  width:auto;
+  background:#EEEEEE;
+  padding:0.5em;
+  margin:1px;
+  cursor:move;
+  border:1px solid #DBEDFF;
+
+  &:nth-child(even) {
+    background:#DBEDFF;
+    &:hover {background: #d3f4fd}
+  }
+  &:nth-child(odd) {
+    background:#cae2fa;
+    &:hover {background: #d3f4fd}
+  }
+  &:first-child {
+    background: #94c3f1;
+    font-weight:bold;
+  }
+  
+  a {
+    border-bottom:0;
+  }
+
+  a.remove_post {
+    font-weight:normal;
+    color:#CC0000;
+    float:right;
+    font-size:1em;
+    padding:0.2em 0.5em;
+    background:#FFFFFF;
+    @include border-radius(0.3em);
+
+    &:hover {
+      background:#000000;
+      color:#FFFFFF;
+    }
+  }
+
+ } 
+}

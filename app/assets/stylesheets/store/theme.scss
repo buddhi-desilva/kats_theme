@@ -1,4 +1,5 @@
 @import "store/variables";
+@import "store/icons";
 
 
 $logo_bg_red: #891101;
@@ -157,23 +158,6 @@ footer.section-nav-container {
 
 
 /* Links */
-@mixin icon-after($color_standard, $color_hover, $icon-text, $icon-size: 1.25em, $top-margin: 0.17em) {
-  &:after {
-    font-weight: normal;
-    font-style: normal;
-    font-size: $icon-size;
-    font-family: 'RaphaelIcons';
-    position: relative;
-    top: $top-margin;
-    margin-left:0.25em;
-    content: $icon-text;
-    color: $color_standard;
-  }
-  &:hover:after {
-   color: $color_hover; 
-  };
-}
-
 a.read-more {
   @include icon-after(#f4c212, #7d6201, ':');
 }
@@ -389,7 +373,7 @@ article#home-content {
       background: $common_shade_of_white;
       padding:15px;
       width:160px;
-      min-height:33em;
+      min-height:33.5em;
       float:left;
       margin:0 10px;
 
@@ -436,3 +420,10 @@ a#rss_feed_subscribe {
   @include icon-after(#f8d14a, #7d6201, 'Æ', 1.7em, 0.16em);
 }
 
+
+
+/* Blog posts admin */
+span#show_on_homepage {
+  input {
+  }
+}

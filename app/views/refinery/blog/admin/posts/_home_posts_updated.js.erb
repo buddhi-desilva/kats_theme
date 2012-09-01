@@ -1,0 +1,15 @@
+notice_div = $('div#flash_container');
+<% notice = flash.discard(:notice) %>
+<% if notice %>
+  if (notice_div.length > 0) {
+    notice_div
+      .fadeIn(200)
+      .html('<div style="visibility: visible; opacity: 1;" class="flash flash_notice" id="flash"><%= notice %><a id="flash_close" href="">Close</a></div>')
+      .fadeOut(4000)
+  } else {
+    alert ('<%= notice %>');
+  }
+  <% if @remove_link %>
+    $('#<%= @remove_link %>').animate({height: 0, opacity: 0}, 500, function() {$(this).remove();});
+  <% end %>
+<% end %>
