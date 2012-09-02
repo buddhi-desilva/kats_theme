@@ -1,0 +1,28 @@
+$fontNumbersPath: "fonts/fyra-numeric_circle_closed" !default;
+
+
+@font-face {
+    font-family: 'fyranumeric_circle_closed';
+    src: url('#{$fontNumbersPath}.eot');
+    src: url('#{$fontNumbersPath}.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontNumbersPath}.woff') format('woff'),
+         url('#{$fontNumbersPath}.ttf') format('truetype'),
+         url('#{$fontNumbersPath}.svg#fyranumeric_circle_closed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.circled-numbers {
+  font-family: 'fyranumeric_circle_closed';
+  font-style:normal !important;
+}
+
+.circled-numbers-cart {
+  font-family: 'fyranumeric_circle_closed';
+  font-style:normal !important;
+  font-size:1.75em;
+  position:relative;
+  top:0.13em;
+  letter-spacing:-0.35em;
+  white-space:nowrap;
+}

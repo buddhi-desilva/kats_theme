@@ -1,27 +1,8 @@
-@font-face {font-family:
-    'RaphaelIcons';
-    src:url('icon-fonts/raphaelicons-webfont.eot');
-    src:local('☺'),
-        local('RaphaelIcons'),
-        url('icon-fonts/raphaelicons-webfont.woff') format('woff'),
-        url('icon-fonts/raphaelicons-webfont.ttf') format('truetype'),
-        url('icon-fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
-}
-
-@media screen and (max-device-width: 1024px) {
-    @font-face {
-        font-family:'RaphaelIcons';
-        src:url('icon-fonts/raphaelicons-webfont.woff') format('woff'),
-            url('icon-fonts/raphaelicons-webfont.ttf') format('truetype'),
-            url('icon-fonts/raphaelicons-webfont.svgwebfontKOf9F4sx') format('svg');
-    }
-}
-
 .icon {
     font-weight: normal;
     font-style: normal;
     line-height: normal;
-    font-family: 'RaphaelIcons';
+    font-family: 'FontAwesome';
     font-size: 1.1em;
     position: relative;
     top: 0.1em;
@@ -33,7 +14,7 @@
     font-style: normal;
     position: relative;
     font-size: $icon-size;
-    font-family: 'RaphaelIcons';
+    font-family: 'FontAwesome';
     top: $top-margin;
     content: $icon-text;
     color: $color_standard;

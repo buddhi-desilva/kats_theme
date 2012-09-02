@@ -10,3 +10,6 @@ en:
             successfully_removed_from_homepage: Post successfully removed from homepage
             manage_homepage_products: Manage homepage products
             no_homepage_products_defined: No homepage products defined
+
+  spree:
+    cart: Cart

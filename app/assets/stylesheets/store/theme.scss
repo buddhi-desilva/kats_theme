@@ -102,6 +102,7 @@ figure#logo {
     padding:5px 8px;
     display:block;
     width:160px;
+    text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
 
     &:hover { color: $logo_border_red !important;}
 
@@ -159,16 +160,16 @@ footer.section-nav-container {
 
 /* Links */
 a.read-more {
-  @include icon-after(#f4c212, #7d6201, ':');
+  @include icon-after(#f4c212, #7d6201, '\f0a9');
 }
 
 a.read-more-section {
-  @include icon-after(#d79a96, #a65651, ':');
+  @include icon-after(#d79a96, #a65651, '\f0a9');
   font-size:1.15em;
 }
 
 a.view-product {
-  @include icon-after(#d79a96, #a65651, 'y', 2em);
+  @include icon-after(#d79a96, #a65651, '\f05a', 1.5em);
   font-weight:300;
 }
 
@@ -417,13 +418,15 @@ article#home-content {
 
 a#rss_feed_subscribe {
   color: #CCCCCC;
-  @include icon-after(#f8d14a, #7d6201, 'Æ', 1.7em, 0.16em);
+  @include icon-after(#f8d14a, #7d6201, '\f09e', 1.7em, 0.16em);
 }
 
 
-
-/* Blog posts admin */
-span#show_on_homepage {
-  input {
+/* --------- Spree --------- */
+span#nav-cart-block {
+  a {
+    @include icon-before( #DEDEDE  , $logo_border_red, '\f07a', 1.5em, 0.12em );
+    color:#CCCCCC !important;
+    &:hover {color: $logo_bg_red !important}
   }
 }
