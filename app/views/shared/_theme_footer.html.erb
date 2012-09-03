@@ -5,6 +5,7 @@
       <li><%= link_to 'Legal notice', refinery.url_for(Refinery::Page.find('legal-notice')) %></li>
       <li><%= link_to 'Privacy policy', refinery.url_for(Refinery::Page.find('privacy-policy')) %></li>
       <li><%= render "/refinery/blog/shared/rss_feed" %></li>
+      <li><%= user_sign_in_link %></li>
     </ul>
   </nav>
 </footer>

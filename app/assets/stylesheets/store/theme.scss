@@ -135,16 +135,20 @@ nav#main-navigation {
 }
 
 nav#footer-nav {
+  margin-bottom:1em;
   ul {
     li {
       white-space:nowrap;
       display: inline;
       padding:0.1em 1em;
-      margin:0;
       border-right:1px solid $common_border_color;
 
       &:last-child {border:none;}
       &:first-child {margin-left: -1em};
+
+      span.user-box {
+        margin-left:-1em;
+      }
     }
   }
 }
@@ -428,5 +432,27 @@ span#nav-cart-block {
     @include icon-before( #DEDEDE  , $logo_border_red, '\f07a', 1.5em, 0.12em );
     color:#CCCCCC !important;
     &:hover {color: $logo_bg_red !important}
+    margin-right:0.5em;
+  }
+}
+
+span.user-box {
+  .account, .login, .logout {
+    margin-left:1em;
+  }
+
+  .account a {
+    color: #CCCCCC;
+    @include icon-before(#DEDEDE, #7d6201, '\f007', 1.7em, 0.16em);
+  }
+
+  .login a {
+    color: #CCCCCC;
+    @include icon-before(#DEDEDE, #7d6201, '\f090', 1.7em, 0.16em);
+  }
+
+  .logout a {
+    color: #CCCCCC;
+    @include icon-before(#DEDEDE, #7d6201, '\f08b', 1.7em, 0.16em);
   }
 }
