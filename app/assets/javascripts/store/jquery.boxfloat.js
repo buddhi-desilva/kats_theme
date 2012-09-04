@@ -14,7 +14,6 @@ jQuery.fn.box_floater = function(){
   margin_horizontal = screen_width * 0.01;
   margin_vertical = screen_height * 0.01;
 
-
   if ( screen_width > (MaxWidth + margin_horizontal + PaddingHorizontal) ) {
     calc_dialog_width = MaxWidth;
   }
@@ -36,6 +35,10 @@ jQuery.fn.box_floater = function(){
     MinHeight = MaxHeight; // Ensures the modal window won't span out of screen size
   }
 
+  //Convert to a % of the container if margin_top_extra is a string
+  if (typeof(margin_top_extra) == 'string') {
+    margin_top_extra = screen_height * (parseInt(margin_top_extra, 10)/100);
+  }
 
   return this
     .width(calc_dialog_width)
@@ -43,5 +46,5 @@ jQuery.fn.box_floater = function(){
     .css('min-height', MinHeight)
     .css('margin-left', (screen_width/2 - (calc_left_margin + PaddingHorizontal/2)) + 'px')
     .css('position', 'absolute')
-    .css('margin-top', (screen_height/2) - (calc_top_margin + PaddingVertical/2) + 'px');
+    .css('margin-top', (margin_top_extra + screen_height/2) - (calc_top_margin + PaddingVertical/2) + 'px');
 };
