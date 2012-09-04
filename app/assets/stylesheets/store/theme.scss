@@ -251,7 +251,6 @@ section#body_content {
     margin-top:1em;
     padding-bottom:1em;
     color: #888888;
-    font-size:1.4em;
     overflow:hidden;
 
     h3 {
@@ -568,5 +567,23 @@ span.user-box {
 
   .logout a {
     @include icon-before(#DEDEDE, #7d6201, '\f08b', 1.7em, 0.16em);
+  }
+}
+
+body#product-details {
+  .variant-option-values li a {
+    background-color: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+    display: block;
+    margin:0 !important;
+    padding:0 !important;
+    text-decoration: none;
+  }
+
+  td#value_fabric_care_instructions {
+    font-family: 'wash_care_symbols_m54regular';
+    font-size:1.75em;
   }
 }

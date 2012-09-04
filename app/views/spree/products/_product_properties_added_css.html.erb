@@ -1,0 +1,4 @@
+<tr class="<%= css_class %>">
+  <td><strong><%= product_property.property.presentation %></strong></td>
+  <td id="value_<%= Spree::Property.find_by_id(product_property.property_id).name %>"><%= product_property.value %></td>
+</tr>

@@ -21,7 +21,7 @@
 <article id="home-content">
   <ul id="homepage-products">
     <%
-    latest_articles = Refinery::Blog::Post.on_homepage
+    latest_articles = Refinery::Blog::Post.on_homepage.limit(3)
 
     @first_post = true
 

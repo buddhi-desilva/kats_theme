@@ -1,0 +1,12 @@
+$fontWashCarePath: "fonts/wash_care_symbols_m54" !default;
+
+
+@font-face {font-family:
+    'wash_care_symbols_m54regular';
+    src:url('#{$fontWashCarePath}.eot');
+    src:local('☺'),
+        local('wash_care_symbols_m54regular'),
+        url('#{$fontWashCarePath}.woff') format('woff'),
+        url('#{$fontWashCarePath}.ttf') format('truetype'),
+        url('#{$fontWashCarePath}.svg#wash_care_symbols_m54regular') format('svg');
+}

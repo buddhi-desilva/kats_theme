@@ -1,0 +1,4 @@
+<%  sofa_cover_fabric = @product.option_types.find_by_name('sofa_cover_fabric') %>
+<%= "<div style='display:none'>".html_safe if sofa_cover_fabric %>
+      <%= render_original %>
+<%= "</div>".html_safe if sofa_cover_fabric %>

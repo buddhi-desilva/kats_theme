@@ -15,7 +15,7 @@
 <article id="blog_post">
     <% if @post.respond_to?('product') && @post.product && @post.product.images %>
       <section class="blog-post-product-content">
-        <%= link_to (image_tag @post.product.images.first.medium_url, :class => 'blog_post_image'), spree.product_path(@post.product) %>
+        <%= link_to (image_tag @post.product.images.first.large_url, :class => 'blog_post_image'), spree.product_path(@post.product) %>
         <p>
           <%= truncate_html @post.product.description, :length => 400 %>
         </p>
