@@ -1,2 +1,2 @@
-//= require store/slides.min.jquery
+//= require store/jquery.boxfloat
 //= require store/google.fonts

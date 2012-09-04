@@ -1,5 +1,20 @@
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    box_container = jQuery('.home-banner');
+    box = jQuery('.home-banner .header-text');
+    box.box_floater();
+  });
+</script>
+
+
 <header class="home-banner">
-  <%= image_tag('temp-banner.png') %>
+  <div class="header-text">
+    <h2>Hi! I’m Kat and welcome to my lounge.</h1>
+    <p>If you share my love for beautiful things, come right in, sit yourself down and let’s get to know each other.</p>
+  </div>
+
+  
+  <%= image_tag 'banner.jpg', :id => 'main-banner' %>
 </header>
 
 <article id="home-content">

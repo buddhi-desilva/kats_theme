@@ -146,10 +146,48 @@ nav#footer-nav {
       &:last-child {border:none;}
       &:first-child {margin-left: -1em};
 
-      span.user-box {
+      span.user-box a {
         margin-left:-1em;
       }
     }
+  }
+}
+
+
+header.home-banner {
+  width:100%;
+  height:395px;
+  overflow:hidden;
+
+  div.header-text {
+    background:$common_shade_of_white;
+
+    padding:10px;
+    max-width:500px;
+    min-width:300px;
+    min-height:50px;
+
+    overflow:hidden;
+    @include border-radius(1em);
+    @include box-shadow(0,0,0,0.8, 1px, 1px, 8px);
+
+    h2 {
+      font-size:1.5em;
+      font-weight:300;
+      font-style:italic;
+      margin:0 0 0.4em 0;
+      padding:0;
+      line-height:1.2em;
+    }
+
+    p {
+      margin:0;
+      padding:0;
+      font-size:1.1em;
+    }
+  }
+
+  img {
   }
 }
 
@@ -442,17 +480,14 @@ span.user-box {
   }
 
   .account a {
-    color: #CCCCCC;
     @include icon-before(#DEDEDE, #7d6201, '\f007', 1.7em, 0.16em);
   }
 
   .login a {
-    color: #CCCCCC;
     @include icon-before(#DEDEDE, #7d6201, '\f090', 1.7em, 0.16em);
   }
 
   .logout a {
-    color: #CCCCCC;
     @include icon-before(#DEDEDE, #7d6201, '\f08b', 1.7em, 0.16em);
   }
 }
