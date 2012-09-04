@@ -1,8 +1,14 @@
 en:
   refinery:
     blog:
+      posts:
+        show:
+          comments:
+            add: Add your thoughts
+            
       admin:
         posts:
+
           homepage_posts:
             show_on_homepage: Show on homepage
             post_position_updated: Home post postions updated

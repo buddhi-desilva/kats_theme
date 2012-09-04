@@ -161,11 +161,11 @@ header.home-banner {
   div.header-text {
     background:$common_shade_of_white;
 
-    padding:10px;
+    padding:5px 8px;
     margin: 0;
-    max-width:500px;
+    max-width:620px;
     min-width:300px;
-    min-height:50px;
+    min-height:20px;
 
     position: absolute;
 
@@ -177,7 +177,7 @@ header.home-banner {
       font-size:1.5em;
       font-weight:300;
       font-style:italic;
-      margin:0 0 0.4em 0;
+      margin:0 0 0.2em 0;
       padding:0;
       line-height:1.2em;
     }
@@ -237,6 +237,77 @@ section#body {
 
 h1#body_content_title {
   color: $title_color_low_profile;
+}
+
+
+section#body_content {
+  section#body {
+    padding:0;
+    float:left;
+    background:none;;
+
+    padding:$content_padding;
+    background: $common_shade_of_white;
+    margin-top:1em;
+    padding-bottom:1em;
+    color: #888888;
+    font-size:1.4em;
+    overflow:hidden;
+
+    h3 {
+      font-weight:300;
+    }
+
+    img {
+      float:left;
+      margin:0 0.8em 0 0;
+    }
+
+    img.image-align-left {
+      float:left;
+      margin:0 0.8em 0 0;
+    }
+
+    img.image-align-right {
+      float:right;
+      margin:0 0 0 0.8em;
+    }
+
+    section.blog-post-product-content {
+      float:left;
+      overflow:hidden;
+      padding:0.25em 1em 0 1em;
+      margin-right:1.5em;
+      border-right:1px solid $subtle_border_color;
+      width:250px;
+      text-align:center;
+
+      p {
+        text-align:left;
+        font-style:italic;
+        color: $subtle_text_color;
+      }
+    }
+
+    aside#comments {
+      h2 {
+        font-weight: 300;
+        letter-spacing:-0.05em;
+        font-size:1.5em;
+        margin-top:1em;
+      }
+
+      div.field {
+        label {
+          display:block;
+        }
+
+        input, textarea {
+          margin-bottom:1em;
+        }
+      }
+    }
+  }
 }
 
 /* Blog */
@@ -352,18 +423,24 @@ div#blog_post_single {
         padding:$content_padding;
         background: $common_shade_of_white;
         margin-top:1em;
+        padding-bottom:1em;
         color: #888888;
-        font-size:1.08em;
+        font-size:1.4em;
         overflow:hidden;
+
+        img {
+          float:left;
+          margin:0 0.8em 0 0;
+        }
 
         img.image-align-left {
           float:left;
-          margin-right:0.8em;
+          margin:0 0.8em 0 0;
         }
 
         img.image-align-right {
           float:right;
-          margin-left:0.8em;
+          margin:0 0 0 0.8em;
         }
 
         section.blog-post-product-content {
