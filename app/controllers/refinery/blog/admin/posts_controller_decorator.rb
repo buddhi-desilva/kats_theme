@@ -24,4 +24,14 @@ Refinery::Blog::Admin::PostsController.class_eval do
     end
   end
 
+  def home_posts_search_spree_products
+    @product_search_term = params[:search_term]
+
+    #do something
+
+    respond_to do |format|
+      format.js  { render :partial => "refinery/blog/admin/posts/spree_product_results" }
+    end    
+  end
+
 end

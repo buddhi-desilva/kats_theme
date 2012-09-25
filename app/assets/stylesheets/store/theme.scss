@@ -582,8 +582,27 @@ body#product-details {
     text-decoration: none;
   }
 
+  h6 {
+    font-weight:normal;
+  }
+
+  div#cart-form {
+    margin-top:1em;
+  }
+
   td#value_fabric_care_instructions {
     font-family: 'wash_care_symbols_m54regular';
     font-size:1.75em;
   }
+}
+
+a.clear-button {
+  @include icon-before( #AA0000  , $logo_border_red, '\f057', 1.5em, 0.18em );
+  color:#888888 !important;
+  background:none !important;
+  font-weight:normal !important;
+  &:hover {
+    color: $logo_bg_red !important;
+  }
+  margin-right:0.5em;
 }

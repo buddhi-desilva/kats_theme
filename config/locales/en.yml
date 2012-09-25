@@ -19,3 +19,4 @@ en:
 
   spree:
     cart: Cart
+    deselect: Deselect
