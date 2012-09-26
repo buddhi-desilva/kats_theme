@@ -596,13 +596,39 @@ body#product-details {
   }
 }
 
-a.clear-button {
-  @include icon-before( #AA0000  , $logo_border_red, '\f057', 1.5em, 0.18em );
-  color:#888888 !important;
-  background:none !important;
-  font-weight:normal !important;
-  &:hover {
-    color: $logo_bg_red !important;
+ul.variant-option-values {
+  li {
+    a.option-value {
+
+      &:hover {background:none;}
+    }
+
+    a label {
+      display:block;
+      overflow:hidden;
+    }
+
+    a.selected {
+      background: none !important;
+      color: #000000;
+    }
+
+    a.clear-button {
+      @include icon-before( #AA0000  , $logo_border_red, '\f057', 1.5em, 0.18em );
+      color:#888888 !important;
+      background:none !important;
+      font-weight:normal !important;
+      &:hover {
+        color: $logo_bg_red !important;
+      }
+      margin-right:0.5em;
+    }
   }
-  margin-right:0.5em;
+}
+
+div#paypal-checkout {
+  width:98%;
+  padding:2% 1% 1% 1%;
+  background:#FFFFFF;
+  text-align:center;
 }
