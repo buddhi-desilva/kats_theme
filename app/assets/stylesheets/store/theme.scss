@@ -632,3 +632,16 @@ div#paypal-checkout {
   background:#FFFFFF;
   text-align:center;
 }
+
+dl#user-info {
+  overflow:hidden;
+
+  dt, dd {
+    float:left;
+    width:auto;
+    margin:0;
+    padding:0;
+  }
+
+  dt {margin-right:0.5em;}
+}
