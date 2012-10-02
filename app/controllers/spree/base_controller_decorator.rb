@@ -5,7 +5,7 @@ Spree::BaseController.class_eval do
   # when a user logs out after adding items to cart
   # and logs in again and when tries to access the cart
   # it gives an authorisation failure error.
-  def associate_user_fix  
+  def associate_user_fix
     if current_order
       @order = current_order(true)
       associate_user
